@@ -1,26 +1,4 @@
-terraform {
-  cloud {
-    organization = "Bestseller-dev"
-
-    workspaces {
-      name = terraform.workspace
-    }
-  }
-}
-
-provider "aws" {
-  region = "us-east-1"
-}
-
 data "aws_region" "current" {}
-
-locals {
-  prefix = "${var.prefix}-${terraform.workspace}"
-  common_tags = {
-    Environment = terraform.workspace
-    ManagedBy   = "Terraform"
-  }
-}
 
 module "networking" {
   source               = "./modules/networking"
