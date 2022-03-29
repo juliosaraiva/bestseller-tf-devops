@@ -45,7 +45,17 @@ variable "cidr_block_private_a" {
   type    = string
 }
 
+variable "cidr_block_private_b" {
+  default = "10.10.32.0/20"
+  type    = string
+}
+
 variable "cidr_block_public_a" {
   default = "10.10.96.0/20"
+  type    = string
+}
+
+variable "cidr_block_public_b" {
+  default = "10.10.112.0/20"
   type    = string
 }

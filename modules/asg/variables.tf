@@ -47,7 +47,7 @@ variable "monitoring_enabled" {
 
 variable "vpc_id" {
   description = "Default VPC"
-  type = string
+  type        = string
 }
 
 variable "subnet_id" {
@@ -57,35 +57,40 @@ variable "subnet_id" {
 
 variable "min_size" {
   description = "The minimum size of the Auto Scaling Group."
-  default = 1
-  type = number
+  default     = 1
+  type        = number
 }
 
 variable "max_size" {
   description = "The maximum size of the Auto Scaling Group."
-  default = 2
-  type = number
+  default     = 3
+  type        = number
 }
 
 variable "desired_capacity" {
   description = "The number of Amazon EC2 instances that should be running in the group."
-  default = 1
-  type = number
+  default     = 1
+  type        = number
 }
 
 variable "health_check_grace_period" {
   description = "Time (in seconds) after instance comes into service before checking health."
-  default = 300
-  type = number
+  default     = 300
+  type        = number
 }
 
 variable "vpc_zone_identifier" {
   description = "A list of subnet IDs to launch resources in."
-  type = list(string)
+  type        = list(string)
 }
 
 variable "health_check_type" {
   description = "'EC2' or 'ELB'. Controls how health checking is done."
-  default = "EC2"
-  type = string
+  default     = "EC2"
+  type        = string
+}
+
+variable "lb_target_group_arn" {
+  description = "Load balancer ARN to attach into ASG"
+  type        = string
 }

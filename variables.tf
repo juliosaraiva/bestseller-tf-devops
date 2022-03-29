@@ -3,4 +3,3 @@ variable "prefix" {
   default     = "bestseller"
   type        = string
 }
-
