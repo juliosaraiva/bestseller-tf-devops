@@ -17,7 +17,7 @@ Create a [Terraform Cloud](https://cloud.hashicorp.com/products/terraform) accou
 
 After create your account, you should create an organization and then a workspace.
 
-Login into your terraform cloud account, then copy the token and paster on cli.
+Login into your terraform cloud account, then copy the token and paster on the cli.
 
 ```
 $ terraform login
