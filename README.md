@@ -17,6 +17,8 @@ Create a [Terraform Cloud](https://cloud.hashicorp.com/products/terraform) accou
 
 After create your account, you should create an organization and then a workspace.
 
+> When you create a workspace, terraform will run remotely, so you need to add the following variables into terraform cloud: `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
+
 Login into your terraform cloud account, then copy the token and paster on the cli.
 
 ```
@@ -27,6 +29,21 @@ Run terraform init to install dependencies from module.
 
 ```
 $ terraform init
+```
+
+Check if module it's working by running the following command
+```
+terraform plan
+```
+
+Terraform apply to provision the infrastructure
+```
+terraform apply -auto-approve
+```
+
+Destroy the infrastructure provisioned by terraform
+```
+terraform apply -destroy --auto-approve
 ```
 
 ## Outputs
